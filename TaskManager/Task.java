@@ -14,6 +14,8 @@ public abstract class Task implements Comparable<Task>{
 	protected TaskType taskType;
 	
 	
+
+
 	public Task(boolean hasNotification, String name, String description, String time, String date) {
 
 		//TODO validation /date and time must be future/
@@ -26,6 +28,10 @@ public abstract class Task implements Comparable<Task>{
 	// when task day is over or task is done - calculate the next date to repeat the task
 	protected abstract void calcNextDate();
 	
+	protected TaskType getTaskType() {
+		return taskType;
+	}
+
 	@Override
 	public abstract String toString();
 	
@@ -39,4 +45,24 @@ public abstract class Task implements Comparable<Task>{
 		}
 		return this.date.compareTo(o.date);
 	}
+
+	protected String getName() {
+		return name;
+	}
+
+	protected String getDescription() {
+		return description;
+	}
+
+	protected LocalDate getDate() {
+		return date;
+	}
+
+	protected LocalTime getTime() {
+		return time;
+	}
+
+
+
 }
+
